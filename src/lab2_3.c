@@ -12,17 +12,38 @@
 */
 
 int is_prime(int n) {
-    // TODO: check if n is prime using loop up to sqrt(n)
-    return 0; // placeholder
+  if (n < 2) return 0;
+
+  // n sayısının asal olup olmadığını kareköküne kadar kontrol ediyoruz (i * i
+  // <= n)
+  for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+      return 0;  // Asal değil
+    }
+  }
+  return 1;  // Asal
 }
 
 int main(void) {
-    int n;
+  int n;
 
-    printf("Enter an integer n (>= 2): ");
-    scanf("%d", &n);
+  printf("Enter an integer n (>= 2): ");
+  scanf("%d", &n);
 
-    // TODO: validate input and print all primes up to n
+  // Girdi doğrulama (n < 2 ise hata ver)
+  if (n < 2) {
+    printf("Hata: Girilen sayı 2'den büyük veya eşit olmalıdır!\n");
+    return 1;
+  }
 
-    return 0;
+  // 2'den n'e kadar olan tüm asal sayıları bul ve yazdır
+  printf("2 ile %d arasındaki asal sayılar:\n", n);
+  for (int i = 2; i <= n; i++) {
+    if (is_prime(i)) {
+      printf("%d ", i);
+    }
+  }
+  printf("\n");
+
+  return 0;
 }
