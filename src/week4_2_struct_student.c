@@ -1,7 +1,7 @@
 /*
  * week4_2_struct_student.c
- * Author: [Your Name]
- * Student ID: [Your ID]
+ * Author: Mehmet Ege Yavuz
+ * Student ID: 241ADB176
  * Description:
  *   Demonstrates defining and using a struct in C.
  *   Define a 'Student' struct with name, id and grade, create two
@@ -13,24 +13,42 @@
 
 #include <stdio.h>
 #include <string.h>
+struct Student {
+  char name[50];
+  int id;
+  float grade;
+};
 
-// TODO: Define struct Student with fields: name (char[50]), id (int), grade (float)
-// Example:
-// struct Student {
+// TODO: Define struct Student with fields: name (char[50]), id (int), grade
+// (float) Example: struct Student {
 //     char name[50];
 //     int id;
 //     float grade;
 // };
 
-int main(void) {
-    // TODO: Declare two Student variables
+int main() {
+  struct Student student1;
+  struct Student student2;
+  strcpy(student1.name, "Alice Johnson");
+  student1.id = 1001;
+  student1.grade = 9.1;
 
-    // TODO: Assign the values (use strcpy for the name):
-    //       Student 1: Alice Johnson, 1001, 9.1
-    //       Student 2: Bob Smith,     1002, 8.7
+  strcpy(student2.name, "Bob Smith");
+  student2.id = 1002;
+  student2.grade = 8.7;
 
-    // TODO: Print each student exactly as:
-    //       Student <k>: <name>, ID: <id>, Grade: <grade with 1 decimal, %.1f>
+  printf("Student 1 %s, ID: %d, Grade: %1f\n", student1.name, student1.id,
+         student1.grade);
 
-    return 0;
+  printf("Student 2: %s, ID: %d, Grade: %1f\n", student2.name, student2.id,
+         student2.grade);
+  return 0;
 }
+// TODO: Declare two Student variables
+
+// TODO: Assign the values (use strcpy for the name):
+//       Student 1: Alice Johnson, 1001, 9.1
+//       Student 2: Bob Smith,     1002, 8.7
+
+// TODO: Print each student exactly as:
+//       Student <k>: <name>, ID: <id>, Grade: <grade with 1 decimal, %.1f>
