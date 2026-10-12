@@ -1,4 +1,8 @@
-
+/*
+ * Name: Mehmet Ege
+ * Surname: Yavuz
+ * Student ID: 241ADB176
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
